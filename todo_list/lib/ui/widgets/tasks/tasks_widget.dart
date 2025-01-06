@@ -124,12 +124,11 @@ class _TaskListRowWidget extends StatelessWidget {
           task.text,
           style: style,
         ),
+        leading: Text('${task.priority}'), // Додали відображення пріоритету
         trailing: Checkbox(
-          // Прибрали IgnorePointer
           value: task.isDone,
           onChanged: (bool? value) => model.toggleDone(indexInList),
         ),
-        onTap: () => model.toggleDone(indexInList),
       ),
     );
   }
