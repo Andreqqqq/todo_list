@@ -13,9 +13,14 @@ class Task extends HiveObject {
 
   @HiveField(2)
   int priority;
+
+  @HiveField(3)
+  DateTime? createdAt;
+
   Task({
     required this.text,
     required this.isDone,
     this.priority = 0,
-  });
+    DateTime? createdAt,
+  }) : this.createdAt = createdAt ?? DateTime.now();
 }
