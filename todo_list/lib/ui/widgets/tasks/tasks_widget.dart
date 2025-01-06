@@ -118,18 +118,16 @@ class _TaskListRowWidget extends StatelessWidget {
           ),
         ],
       ),
+      // В _TaskListRowWidget змінимо логіку чекбокса
       child: ListTile(
         title: Text(
           task.text,
           style: style,
         ),
-        trailing: IgnorePointer(
-          child: Checkbox(
-            value: task.isDone,
-            onChanged: (bool? value) {
-              !task.isDone;
-            },
-          ),
+        trailing: Checkbox(
+          // Прибрали IgnorePointer
+          value: task.isDone,
+          onChanged: (bool? value) => model.toggleDone(indexInList),
         ),
         onTap: () => model.toggleDone(indexInList),
       ),
