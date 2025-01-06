@@ -10,8 +10,12 @@ class Task extends HiveObject {
 
   @HiveField(1)
   bool isDone;
+
+  @HiveField(2)
+  int priority;
   Task({
     required this.text,
     required this.isDone,
+    this.priority = 0,
   });
 }
