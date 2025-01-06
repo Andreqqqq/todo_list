@@ -11,6 +11,7 @@ class GroupsWidget extends StatefulWidget {
 
 class _GroupsWidgetState extends State<GroupsWidget> {
   final _model = GroupsWidgetModel();
+
   @override
   Widget build(BuildContext context) {
     return GroupsWidgetModelProvider(
