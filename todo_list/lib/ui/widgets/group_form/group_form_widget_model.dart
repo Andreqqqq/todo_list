@@ -4,6 +4,7 @@ import 'package:todo_list/domain/entity/group.dart';
 
 class GroupFormWidgetModel extends ChangeNotifier {
   var _groupName = '';
+
   String? errorText;
 
   set groupName(String value) {
