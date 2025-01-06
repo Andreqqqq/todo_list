@@ -24,14 +24,26 @@ class _GroupFormWidgetBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final model = GroupFormWidgetModelProvider.watch(context)?.model;
+    final errorMessage = Text(
+      'Помилка при створенні групи',
+      style: TextStyle(color: Colors.red),
+    );
+
     return Scaffold(
       appBar: AppBar(
         title: const Text('Нова група'),
       ),
       body: Center(
-        child: const Padding(
+        child: Padding(
           padding: EdgeInsets.symmetric(horizontal: 15),
-          child: _GroupNameWidget(),
+          child: Column(
+            mainAxisSize: MainAxisSize.min,
+            children: [
+              const _GroupNameWidget(),
+              if (model?.errorText != null) errorMessage,
+            ],
+          ),
         ),
       ),
       floatingActionButton: FloatingActionButton.extended(
