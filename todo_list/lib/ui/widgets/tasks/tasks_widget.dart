@@ -120,6 +120,7 @@ class _TaskListRowWidget extends StatelessWidget {
       ),
       // В _TaskListRowWidget змінимо логіку чекбокса
       child: ListTile(
+        // зміни в TasksWidget для відображення кольору
         title: Text(
           task.text,
           style: style,
